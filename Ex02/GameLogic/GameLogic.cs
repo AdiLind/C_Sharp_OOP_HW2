@@ -84,5 +84,42 @@ namespace Ex02.GameLogic
 
             return true;
         }
+
+        public static GuessResult EvaluateGuess(char[] i_GuessInput, char[] i_Secret)
+        {
+            int bullShotsCount = 0;
+            int hitsCount = 0;
+            bool[] guessUsedFlags = new bool[GameConstants.k_SequenceLength];
+            bool[] secretLetterUsageFlags = new bool[GameConstants.k_SequenceLength];
+
+            for (int i = 0; i < GameConstants.k_SequenceLength; i++)
+            {
+                if (i_GuessInput[i] == i_Secret[i])
+                {
+                    guessUsedFlags[i] = true;
+                    secretLetterUsageFlags[i] = true;
+                    bullShotsCount++;
+                }
+            }
+
+            for (int i = 0; i < GameConstants.k_SequenceLength; i++)
+            {
+                if (!guessUsedFlags[i])
+                {
+                    for(int j=0; j < GameConstants.k_SequenceLength; j++)
+                    {
+                        if (!secretLetterUsageFlags[j] && i_Secret[j] == i_GuessInput[i])
+                        {
+                            secretLetterUsageFlags[j] = true;
+                            hitsCount++;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            GuessResult guessResult = new GuessResult(i_GuessInput,bullShotsCount, hitsCount);
+            return guessResult;
+        }
     }
 }
