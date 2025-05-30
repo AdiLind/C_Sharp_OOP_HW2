@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Ex02.GameLogic
 {
     public static class GameConstants

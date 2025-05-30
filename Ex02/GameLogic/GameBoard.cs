@@ -14,7 +14,7 @@ namespace Ex02.GameLogic
         {
             r_MaxGuesses = i_MaxGuesses;
             r_GuessHistory = new GuessResult[i_MaxGuesses];
-            r_ComputerChoice = GameLogic.GenerateRandomSequence();
+            r_ComputerChoice = GameEngine.GenerateRandomSequence();
             m_CurrentGuessIndex = 0;
             m_IsWon = false;
         }
@@ -44,9 +44,9 @@ namespace Ex02.GameLogic
             get { return m_IsWon; }
         }
 
-        public string ComputerChoice
+        public string RevealSecret()
         {
-            get { return new string(r_ComputerChoice); }
+            return IsGameOver ? new string(r_ComputerChoice) : string.Empty;
         }
 
         public GuessResult GetGuessResult(int i_Index)
@@ -66,35 +66,26 @@ namespace Ex02.GameLogic
 
         public bool MakeGuess(string i_Guess)
         {
+            bool guessAccepted = true;
+
             if (IsGameOver)
             {
-                return false;
+                guessAccepted = false;
             }
-
-            char[] guessArray = GameLogic.StringToCharArray(i_Guess);
-            GuessResult result = GameLogic.EvaluateGuess(guessArray, r_ComputerChoice);
-
-            r_GuessHistory[m_CurrentGuessIndex] = result;
-            m_CurrentGuessIndex++;
-
-            if (result.IsPerfectGuess())
+            else
             {
-                m_IsWon = true;
+                char[] guessArray = i_Guess.ToCharArray();
+                GuessResult result = GameEngine.EvaluateGuess(guessArray, r_ComputerChoice);
+                r_GuessHistory[m_CurrentGuessIndex] = result;
+                m_CurrentGuessIndex++;
+
+                if (result.IsPerfectGuess())
+                {
+                    m_IsWon = true;
+                }
             }
 
-            return true;
-        }
-
-        public void ResetGame()
-        {
-            m_CurrentGuessIndex = 0;
-            m_IsWon = false;
-            Array.Copy(GameLogic.GenerateRandomSequence(), r_ComputerChoice, GameConstants.k_SequenceLength);
-
-            for (int i = 0; i < r_MaxGuesses; i++)
-            {
-                r_GuessHistory[i] = new GuessResult();
-            }
+            return guessAccepted;
         }
     }
 }

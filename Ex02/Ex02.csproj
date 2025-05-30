@@ -37,13 +37,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Ex02.ConsoleUtils">
-      <HintPath>..\Ex02.ConsoleUtils.dll</HintPath>
+      <HintPath>.\Ex02.ConsoleUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameLogic\GameBoard.cs" />
     <Compile Include="GameLogic\GameConstants.cs" />
-    <Compile Include="GameLogic\GameLogic.cs" />
+    <Compile Include="GameLogic\GameEngine.cs" />
     <Compile Include="GameLogic\GuessResult.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>

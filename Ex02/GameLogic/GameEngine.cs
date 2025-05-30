@@ -1,9 +1,8 @@
 ﻿using System;
 
-
 namespace Ex02.GameLogic
 {
-    public static class GameLogic
+    public static class GameEngine
     {
         private static Random s_Random = new Random();
 
@@ -16,7 +15,7 @@ namespace Ex02.GameLogic
             {
                 int randomLetterIndex = s_Random.Next(GameConstants.k_NumOfLegalLetters);
 
-                while(usedLettersFlags[randomLetterIndex])
+                while (usedLettersFlags[randomLetterIndex])
                 {
                     randomLetterIndex = s_Random.Next(GameConstants.k_NumOfLegalLetters);
                 }
@@ -28,61 +27,79 @@ namespace Ex02.GameLogic
             return sequence;
         }
 
-        public static bool IsValidGuessAttempts(int i_MaxGuess) // we need to check before calling this function that the input is a number in the main method
+        public static bool IsValidGuessAttempts(int i_MaxGuess)
         {
             return i_MaxGuess >= GameConstants.k_MinGuessAttempts && i_MaxGuess <= GameConstants.k_MaxGuessAttempts;
         }
 
         public static bool IsAllUpper(string i_Input)
         {
+            bool isAllUpper = true;
+
             foreach (char c in i_Input)
             {
                 if (!char.IsUpper(c) && c != GameConstants.k_QuitButton)
                 {
-                    return false;
+                    isAllUpper = false;
+                    break;
                 }
             }
-            return true;
+
+            return isAllUpper;
         }
 
-        public static bool IsValidGuess(string i_Input)
+        public static bool IsValidGuess(string i_Input, out string o_ErrorMessage)
         {
-            if ((i_Input.ToUpper() == GameConstants.k_QuitButton.ToString()))
+            bool isValid= true;
+            o_ErrorMessage = null;
+
+            if (i_Input == GameConstants.k_QuitButton.ToString())
             {
-                return true; /// maybe break? we need to continue and recheck this section after we will implement the exit function
+                isValid = true;
             }
 
-            if ((i_Input.Length != GameConstants.k_SequenceLength))
+            else if (i_Input.Length != GameConstants.k_SequenceLength)
             {
-                return false;
+                o_ErrorMessage = string.Format(
+                    "Your guess must contain exactly {0} letters.", GameConstants.k_SequenceLength);
+                isValid = false;
             }
-
-            if (!IsAllUpper(i_Input))
+            else if (!IsAllUpper(i_Input))
             {
-                Console.WriteLine(string.Format("Please enter only uppercase letters from {0} to {1}.",
-                    GameConstants.k_MinLetter , GameConstants.k_MaxLetter));
-                return false;
+                o_ErrorMessage = string.Format(
+                    "Please enter only uppercase letters from {0} to {1}.",
+                    GameConstants.k_MinLetter, GameConstants.k_MaxLetter);
+                isValid = false;
             }
-
-            bool[] usedLettersFlags = new bool[GameConstants.k_NumOfLegalLetters];
-            foreach (char letter in  i_Input)
+            else
             {
-                if (letter < GameConstants.k_MinLetter || letter > GameConstants.k_MaxLetter)
+                bool[] usedFlags = new bool[GameConstants.k_NumOfLegalLetters];
+
+                foreach (char letter in i_Input)
                 {
-                    Console.WriteLine(string.Format("Please enter only letters from {0} to {1}.",
-                        GameConstants.k_MinLetter, GameConstants.k_MaxLetter));
-                    return false;
+                    if (letter < GameConstants.k_MinLetter || letter > GameConstants.k_MaxLetter)
+                    {
+                        o_ErrorMessage = string.Format(
+                            "Letter '{0}' is outside the valid range ({1}-{2}).",
+                            letter, GameConstants.k_MinLetter, GameConstants.k_MaxLetter);
+                        isValid = false;
+                        break;
+                    }
+
+                    int index = letter - GameConstants.k_MinLetter;
+                    if (usedFlags[index])
+                    {
+                        o_ErrorMessage = string.Format(
+                            "You have already used the letter '{0}' more than once.", letter);
+                        isValid = false;
+                        break;
+                    }
+
+                    usedFlags[index] = true;
                 }
-                int letterIndex = letter - GameConstants.k_MinLetter;
-                if (usedLettersFlags[letterIndex])
-                {
-                    Console.WriteLine("You have already used the letter '{0}' more than once. Please try again.", letter);
-                    return false;
-                }
-                usedLettersFlags[letterIndex] = true;
             }
 
-            return true;
+            return isValid;
         }
 
         public static GuessResult EvaluateGuess(char[] i_GuessInput, char[] i_Secret)
@@ -106,7 +123,7 @@ namespace Ex02.GameLogic
             {
                 if (!guessUsedFlags[i])
                 {
-                    for(int j=0; j < GameConstants.k_SequenceLength; j++)
+                    for (int j = 0; j < GameConstants.k_SequenceLength; j++)
                     {
                         if (!secretLetterUsageFlags[j] && i_Secret[j] == i_GuessInput[i])
                         {
@@ -118,8 +135,7 @@ namespace Ex02.GameLogic
                 }
             }
 
-            GuessResult guessResult = new GuessResult(i_GuessInput,bullShotsCount, hitsCount);
-            return guessResult;
+            return new GuessResult(i_GuessInput, bullShotsCount, hitsCount);
         }
     }
 }

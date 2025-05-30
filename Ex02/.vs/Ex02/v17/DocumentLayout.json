@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|c:\\users\\user\\onedrive - reichman university\\desktop\\c#\\c_sharp_oop_hw2\\ex02\\gamelogic\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|solutionrelative:gamelogic\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|c:\\users\\user\\onedrive - reichman university\\desktop\\c#\\c_sharp_oop_hw2\\ex02\\gamelogic\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|solutionrelative:gamelogic\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|c:\\users\\user\\onedrive - reichman university\\desktop\\c#\\c_sharp_oop_hw2\\ex02\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|c:\\users\\user\\onedrive - reichman university\\desktop\\c#\\c_sharp_oop_hw2\\ex02\\gamelogic\\guessresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|solutionrelative:gamelogic\\guessresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|c:\\users\\user\\onedrive - reichman university\\desktop\\c#\\c_sharp_oop_hw2\\ex02\\gamelogic\\gameconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07C9DFDC-B6B3-48C3-974E-941287FEEEFD}|Ex02.csproj|solutionrelative:gamelogic\\gameconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameConstants.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameConstants.cs",
+              "RelativeDocumentMoniker": "GameLogic\\GameConstants.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameConstants.cs",
+              "RelativeToolTip": "GameLogic\\GameConstants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:48:53.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameEngine.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameEngine.cs",
+              "RelativeDocumentMoniker": "GameLogic\\GameEngine.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameEngine.cs",
+              "RelativeToolTip": "GameLogic\\GameEngine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:12:11.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAQwJIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:11:15.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameBoard.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameBoard.cs",
+              "RelativeDocumentMoniker": "GameLogic\\GameBoard.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GameBoard.cs",
+              "RelativeToolTip": "GameLogic\\GameBoard.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwEwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:12:08.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GuessResult.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GuessResult.cs",
+              "RelativeDocumentMoniker": "GameLogic\\GuessResult.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Reichman University\\Desktop\\c#\\C_Sharp_OOP_HW2\\Ex02\\GameLogic\\GuessResult.cs",
+              "RelativeToolTip": "GameLogic\\GuessResult.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T10:12:10.931Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
